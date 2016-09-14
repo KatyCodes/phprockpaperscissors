@@ -16,7 +16,8 @@
         $player2 = $_POST['player2_choice'];
         $rock_paper_scissors = new RockPaperScissors;
         $result = $rock_paper_scissors->playGame($player1, $player2);
-        return $result;
+        return $app['twig']->render('result.html.twig', array('result'=> $result, 'player1'=>$player1, 'player2'=>$player2));
+
     });
 
     return $app;
